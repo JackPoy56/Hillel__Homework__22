@@ -18,9 +18,8 @@ class Calculator extends React.Component {
             finish: false
         };
     }
-
-    add = () => {
-        let result = +this.state.currentNumber + +this.state.prevNumber;
+    
+    addMathOperCheck = (result) => {
         if (isNaN(result)) {
             result = 'Error';
         }
@@ -29,73 +28,38 @@ class Calculator extends React.Component {
         } else {
             this.setState(() => ({currentNumber: result, finish: false, operation: null, prevNumber: ''}));
         }
+    } 
+
+    add = () => {
+        let result = +this.state.currentNumber + +this.state.prevNumber;
+        this.addMathOperCheck(result);
     }
 
     sub = () => {
         let result = +this.state.prevNumber - +this.state.currentNumber;
-        
-        if (isNaN(result)) {
-            result = 'Error';
-        }
-        if (this.state.finish === false) {
-            this.setState(() => ({currentNumber: '', prevNumber: result }));
-        } else {
-            this.setState(() => ({currentNumber: result, finish: false, operation: null, prevNumber: ''}));
-        }
+        this.addMathOperCheck(result);
     }
 
     div = () => {
         let result = +this.state.prevNumber / +this.state.currentNumber;
-        
-        if (isNaN(result)) {
-            result = 'Error';
-        }
-        if (this.state.finish === false) {
-            this.setState(() => ({currentNumber: '', prevNumber: result }));
-        } else {
-            this.setState(() => ({currentNumber: result, finish: false, operation: null, prevNumber: ''}));
-        }
+        this.addMathOperCheck(result);
     }
 
     mult = () => {
         let result = +this.state.prevNumber * +this.state.currentNumber;
-        
-        if (isNaN(result)) {
-            result = 'Error';
-        }
-        if (this.state.finish === false) {
-            this.setState(() => ({currentNumber: '', prevNumber: result }));
-        } else {
-            this.setState(() => ({currentNumber: result, finish: false, operation: null, prevNumber: ''}));
-        }
+        this.addMathOperCheck(result);
     }
 
     interest = () => {
         let result = (+this.state.prevNumber / 100) * +this.state.currentNumber;
-        
-        if (isNaN(result)) {
-            result = 'Error';
-        }
-        if (this.state.finish === false) {
-            this.setState(() => ({currentNumber: '', prevNumber: result }));
-        } else {
-            this.setState(() => ({currentNumber: result, finish: false, operation: null, prevNumber: ''}));
-        }
+        this.addMathOperCheck(result);
     }
 
     degree = () => {
         const x = +this.state.prevNumber;
         const y = +this.state.currentNumber;
         let result = Math.pow(x,y);
-       
-        if (isNaN(result)) {
-            result = 'Error';
-        }
-        if (this.state.finish === false) {
-            this.setState(() => ({currentNumber: '', prevNumber: result }));
-        } else {
-            this.setState(() => ({currentNumber: result, finish: false, operation: null, prevNumber: ''}));
-        }
+        this.addMathOperCheck(result);
     }
 
     mathOperetions = () => {
