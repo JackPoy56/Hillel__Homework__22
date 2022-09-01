@@ -1,0 +1,27 @@
+.Calculator {
+    margin: 25px auto;
+    padding: 10px;
+    width: 350px;
+    
+    color: aliceblue;
+    
+    background-color: #524e4e;
+}
+
+.container {
+    display: flex;
+}
+
+.wrapper-numbers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 67%;
+    margin-top: 10px;
+}
+
+.wrapper-math-item {
+    display: flex;
+    flex-wrap: wrap;
+    width: 33%;
+}

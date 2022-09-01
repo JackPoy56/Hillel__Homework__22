@@ -1,0 +1,13 @@
+.MathItem {
+    width: 50px;
+    margin: 5px 0px 5px 5px;
+   
+    text-align: center;
+    cursor: pointer;
+   
+    background-color: #d6b004;
+}
+
+.MathItem:hover {
+    background-color: #ca9a1e;
+}
